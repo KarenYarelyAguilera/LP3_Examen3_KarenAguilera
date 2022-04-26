@@ -1,0 +1,19 @@
+﻿@page "/"
+
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+        <h1>Bienvenido Administrador</h1>
+   </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Usuario">
+    <Authorized Context="AuthenticationState">
+        <h1>Bienvenido Usuario</h1>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <h2>BIENVENIDO! IDENTIFIQUESE PARA PODER ACCEDER </h2>
+    </NotAuthorized> 
+</AuthorizeView>

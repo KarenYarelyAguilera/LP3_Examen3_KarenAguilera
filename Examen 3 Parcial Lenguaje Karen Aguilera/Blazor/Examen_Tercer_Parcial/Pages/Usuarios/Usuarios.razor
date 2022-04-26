@@ -1,0 +1,38 @@
+﻿@page "/Usuarios"
+<h3>Usuarios</h3>
+
+<div class"form-group row">
+    <div class="col-sm-2">
+        <a href="/Usuarios/Nuevo" class="btn btn-primary">Nuevo Usuario</a>
+    </div>
+</div>
+
+@if (usuariosLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CódigoUsuario</th>
+                <th>NombreUsuario</th>
+                <th>Rol</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in usuariosLista)
+            {
+                <tr>
+                    <td>@user.CodigoUsuario</td>
+                    <td>@user.NombreUsuario</td>
+                    <td>@user.Rol</td>
+                    
+               
+                </tr>
+            }
+        </tbody>
+    </table>
+}
